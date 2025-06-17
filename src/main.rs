@@ -56,9 +56,8 @@ async fn main(_spawner: Spawner) {
 
     display.set_rotation(memory_lcd_spi::framebuffer::Rotation::Deg180);
 
-    let mut delay = embassy_time::Delay;
     display.clear(Rgb111::WHITE).unwrap();
-    display.update(&mut delay).unwrap();
+    display.update().unwrap();
     // loop {}
     // drawing code with embedded-graphics
 
@@ -112,7 +111,7 @@ async fn main(_spawner: Spawner) {
             x = 0;
         }
         // pwm.set_duty_cycle(c.top / 2).unwrap();
-        display.update(&mut delay).unwrap();
+        display.update().unwrap();
         cnt += 1;
         if start.elapsed().as_millis() > 1000 {
             info!("{}Hz", cnt);

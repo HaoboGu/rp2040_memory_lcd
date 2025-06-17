@@ -22,6 +22,6 @@ portable-atomic = { version = "1.11", features = ["critical-section"] }
 defmt = "1.0"
 defmt-rtt = "1.0"
 panic-probe = { version = "1.0", features = ["print-defmt"] }
-memory-lcd-spi = "0.0.7"
+memory-lcd-spi = { git = "https://github.com/haobogu/memory-lcd-spi", branch = "feat/add_const_buf_size" }
 embedded-graphics-core = { version = "0.4.0", features = ["defmt"] }
 embedded-graphics = "0.8"
